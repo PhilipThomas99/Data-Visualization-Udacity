@@ -7,10 +7,11 @@ On this project, I choose to work with my own dataset. I am fascinated by the re
 ### Design
 
 #### Final Design Objective
-My final goal is to visualize two graphs: 
- 
-- how much barrel of oil that we could buy with an ounce of gold. 
-- how much Big Mac that we could buy with a barrel of oil. 
+My final goal is to visualize three graphs: 
+
+- Show the historical prices of the oil. Hopefully witht this graph, the reader appreciates the volatility of the oil price. 
+- Make a graph that shows how much barrel of oil that we could buy with an ounce of gold. 
+- Make a graph that shows how much Big Mac that we could buy with a barrel of oil. 
 
 #### Data Processing (in R)
 After I got the Monthly West Texas Intermediate (WTI) Oil and Gold data from [Quandl.com](https://www.quandl.com/), I then clean the data a little bit. Here's What I done: 
@@ -31,10 +32,15 @@ However, I also would like to compare the price of gold to the price of oil. We 
 
 #### Initial Version of Visualization (dimple.js)
 
-The Initial Version of the charts is as follow. 
+The Initial Version of the charts is as follow:. 
 
+- Monthly Oil Price Plot
 ![Oil Price](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/OilPrice_Initial.PNG)
+
+- BigMacs Per BBL of Oil
 ![BigMacs per BBL of Oil](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/BigMac_Oil_Initial.PNG)
+
+- BBLs of Oil Per Oz of Gold
 ![BBLs per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/Gold_Oil_Initial.PNG)
 
 
@@ -68,6 +74,23 @@ I interviewed 3 of my lab mates in person, and asked for their feedback on the m
 
 #### Final Version of Visualization (dimple.js)
 
+After the interviews, I made some changes on the charts. Here are the changes that I made. 
+- Edit the alignment of the HTML components so that the charts are segmented in a better way.
+- Add title for each chart
+- Fix the x and y axis title so that it's more consistent
+- Change the color and opacity of each chart, so that the reader knows philosophicaly, which one is which. 
+
+The Final Result is as follow:
+
+- Monthly Oil Price Plot
+![Oil Price](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/OilPrice_Final.PNG)
+
+- BigMacs Per BBL of Oil
+![BigMacs per BBL of Oil](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/BigMac_Oil_Final.PNG)
+
+- BBLs of Oil Per Oz of Gold
+![BBLs per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/Gold_Oil_Final.PNG) 
+
 ### Resources
 
 Here are the following resources I use in making this project: 
@@ -76,3 +99,19 @@ Here are the following resources I use in making this project:
 - [Udacity Data Visualization Lecture](https://www.udacity.com/course/viewer#!/c-ud507-nd)
 - [Question in stackoverflow about chart title](http://stackoverflow.com/questions/25416063/title-for-charts-and-axes-in-dimple-js-charts)
 - [Big Mac Index](http://www.economist.com/content/big-mac-index)
+
+### Data
+The data that I downloaded from is the following two files: 
+
+- [Monthly Oil Price](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/CHRIS-CME_CL1.csv)
+- [Monthly Gold Price](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/CHRIS-CME_GC1.csv)
+
+I compiled my own Big Mac data: 
+
+- [here](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/BigMacPrice.csv)
+
+From all these data, I then use R to produce the following csv files for the dimple.js implementation:
+
+- [Initial_Plot_Oil.csv](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/Initial_Plot_Oil.csv)
+- [Bigmac_Oil_Data.csv](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/Bigmac_Oil_Data.csv)
+- [Gold_Oil_Data.csv](https://github.com/PhilipThomas99/Data-Visualization-Udacity/blob/master/Data/Gold_Oil_Data.csv)
