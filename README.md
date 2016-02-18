@@ -20,7 +20,7 @@ After I got the Monthly West Texas Intermediate (WTI) Oil and Gold data from [Qu
 - The economists originally issues the bigmac data as a yearly data. However some of the years have two BigMac price, in January and in June. I average these two out to get the yearly BigMac Data. As I use WTI as my base for oil price, I use BigMac prices in the USA as my base, 
 - From there, I assume that the Oil Price is fluctuating over the year, and the bigmac price is constant for that year. Similar to how we calculate the [P/E ratio](http://www.investopedia.com/terms/p/price-earningsratio.asp) in stocks. 
 
-After I got the dataframe right, I then calculate the desired variable and export the csv from R. You can follow my R code in processing the data [here]()
+After I got the dataframe right, I then calculate the desired variable and export the csv from R. You can see my R code for processing the data [here]()
 
 #### Plot Sketching
 I made a rough plot using base graphic in R. The objective is to communicate the Bigmac per bbl of oil as shown in chart below.
@@ -90,6 +90,8 @@ The Final Result is as follow:
 
 - BBLs of Oil Per Oz of Gold
 ![BBLs per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/Gold_Oil_Final.PNG) 
+
+You can see about the analysis of the chart inside the html file and load it up as a webpage. 
 
 ### Resources
 
