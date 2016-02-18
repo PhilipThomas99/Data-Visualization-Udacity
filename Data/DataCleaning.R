@@ -1,4 +1,4 @@
-setwd("C:/Users/Phili/Downloads/Udacity - Data Visualization Project")
+setwd("C:/Users/Phili/Downloads/Udacity - Data Visualization Project/Data")
 library(zoo)
 library(plyr)
 
@@ -68,6 +68,6 @@ plot(Bigmac_Oil$Date, Bigmac_Oil$BigmacPerBBL)
 lines(Bigmac_Oil$Date, Bigmac_Oil$BigmacPerBBL)
 
 #Plot Sketching for Gold
-Plot(Gold_Oil$Date, Gold_Oil$BBLperOzGold)
+plot(Gold_Oil$Date, Gold_Oil$BBLperOzGold)
 lines(Gold_Oil$Date, Gold_Oil$BBLperOzGold)
 
