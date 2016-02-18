@@ -23,11 +23,11 @@ After I got the dataframe right, I then calculate the desired variable and expor
 
 #### Plot Sketching
 I made a rough plot using base graphic in R. The objective is to communicate the Bigmac per bbl of oil as shown in chart below.
-![BigMac per BBL of Oil](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/BigMacPerBBL.png)
+![BigMac per BBL of Oil](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/BigMacPerBBL.png)
 
 
 However, I also would like to compare the price of gold to the price of oil. We know that gold is considered as standard currency. so I want to see that historically, how many bbl per oz of gold we can buy. It is shown in chart below.
-![BBL of Oil per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/BBLPerGold.png)
+![BBL of Oil per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/BBLPerGold.png)
 
 #### Initial Version of Visualization (dimple.js)
 
