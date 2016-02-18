@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+  <title> BigMac and Oil </title>
+  <style>
+    h1{
+      text-align: center;
+    }
+    h3{
+      text-align: left;
+      color: black; 
+    }
+  </style>
+    <script type="text/javascript">
+    
+    // chart 1
+      function draw(data) {
+      
+      //svg definition
+
+          "use strict";
+          var margin = 75,
+              width = 1400 - margin,
+              height = 600 - margin;
+
+          var svg = dimple.newSvg("#ChartOil", width, height)
+
+      // add chart
+          var OilPriceChart = new dimple.chart(svg, data);
+          var x = OilPriceChart.addTimeAxis("x", "Date","%Y-%m-%d", "%b-%Y");
+          var y = OilPriceChart.addMeasureAxis("y", "Price");
+          y.tickFormat = ',.1f';
+
+          svg.append("text")
+            .attr("x", OilPriceChart._xPixels() + OilPriceChart._widthPixels() / 2)
+            .attr("y", OilPriceChart._yPixels() - 20)
+            .style("text-anchor", "middle")
+            .style("font-family", "sans-serif")
+            .style("font-weight", "bold")
+            .text("WTI Price Monthly ($/BBL)");
+
+          OilPriceChart.addSeries(null, dimple.plot.area);
+          OilPriceChart.addSeries(null, dimple.plot.scatter);
+          OilPriceChart.draw();
+          y.titleShape.text("Oil Price ($/BBL)");
+        };
+
+    // chart 2
+        function draw2(data) {
+
+        // svg definition
+          
+          "use strict";
+          var margin = 75,
+              width = 1400 - margin,
+              height = 600 - margin;
+
+
+          var sv2 = dimple.newSvg("#BigMac", width, height)
+
+          var BigMacChart = new dimple.chart(sv2, data);
+          var x = BigMacChart.addTimeAxis("x", "Date","%Y-%m-%d", "%b-%Y");
+          var y = BigMacChart.addMeasureAxis("y", "BigmacPerBBL");
+          y.tickFormat = ',.1f';
+
+        // add title
+          sv2.append("text")
+            .attr("x", BigMacChart._xPixels() + BigMacChart._widthPixels() / 2)
+            .attr("y", BigMacChart._yPixels() - 20)
+            .style("text-anchor", "middle")
+            .style("font-family", "sans-serif")
+            .style("font-weight", "bold")
+            .text("BigMacs per Barrel of Oil");
+
+
+        //draw the chart
+          BigMacChart.addSeries(null, dimple.plot.area);
+          BigMacChart.addSeries(null, dimple.plot.scatter);
+          BigMacChart.defaultColors = [new dimple.color("#f1c40f", "#f39c12", 0.3)]; //yellow
+
+          BigMacChart.draw();
+          y.titleShape.text("BigMacs per Barrel of WTI Oil");
+          x.titleShape.text("Date");
+        };
+
+      // chart 3
+        function draw3(data) {
+
+        // defined svg
+          
+          "use strict";
+          var margin = 75,
+              width = 1400 - margin,
+              height = 600 - margin;
+
+          var sv3 = dimple.newSvg("#GoldPrice", width, height)
+
+          var GoldChart = new dimple.chart(sv3, data);
+          var x = GoldChart.addTimeAxis("x", "Date","%Y-%m-%d", "%b-%Y");
+          var y = GoldChart.addMeasureAxis("y", "BBLperOzGold");
+          y.tickFormat = ',.1f';
+          GoldChart.defaultColors = [new dimple.color("#2ecc71", "#27ae60", 0.5)] //green
+
+        // add title
+
+          sv3.append("text")
+            .attr("x", GoldChart._xPixels() + GoldChart._widthPixels() / 2)
+            .attr("y", GoldChart._yPixels() - 20)
+            .style("text-anchor", "middle")
+            .style("font-family", "sans-serif")
+            .style("font-weight", "bold")
+            .text("WTI Oil Barrel per Oz of Gold");
+
+        // add series and draw
+
+          GoldChart.addSeries(null, dimple.plot.area);
+          GoldChart.addSeries(null, dimple.plot.scatter);
+          GoldChart.draw();
+          x.titleShape.text("Date");
+          y.titleShape.text("Barrels of Oil per Oz of Gold");
+        };
+
+      </script>
+  </head>
+<body>
+  <div>
+    <h1> How Cheap is the Oil Price?</h1>
+  </div>
+  <div id="ChartOil">
+    <h2> WTI Oil Price Monthly </h2>
+    <p>We can see that the prices of West Texas Intermediate (WTI) oil is down by quite considerable margin from 2014. However, how cheap is the oil? Can we quantify that? </p>
+  </div>
+  <div id="BigMac">
+    <h2> How Many BigMac You Can Buy with a Barrel of Oil? </h2>
+    <p>We can compare the oil to the price of bigmac. some people say that bigmac is the true indicator for inflation. As we can see below, currently we can buy around 6 bigmacs with one barrel of oil. This is cheap by comparison, but not the cheapest in history. We can buy only 4 bigmacs with a barrel of oil in 1999. But I'd say currently is considerably cheap</p>
+  </div>
+  <div id="GoldPrice">
+    <h2> How Many Barrel You Can Buy with an Ounce of Gold? </h2>
+    <p> The 2nd way to visualize of how cheap the oil is to compare it to other commodity that is considered as the most stable currency in the world. Gold. The plot below shows how many barrels of oil that we can buy with an oz of gold. The more we can buy, the cheapest the oil. Surprisingly, oil is at the cheapest point in history. Never before can we buy this much oil with an ounce of gold. </p>
+  </div>
+  <script type="text/javascript">
+  // data loading
+    d3.csv("Initial_Plot_Oil.csv", draw);
+    d3.csv("Bigmac_Oil_Data.csv", draw2);
+    d3.csv("Gold_Oil_Data.csv", draw3);
+  </script>
+</body>
+</html>
