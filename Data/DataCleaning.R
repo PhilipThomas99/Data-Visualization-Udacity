@@ -61,7 +61,7 @@ write.csv(Gold_Oil, "Gold_Oil_Data.csv", row.names=FALSE)
 
 ############################ Plot Sketching ###################################
 
-
+Plot_Oil <- data.frame(Date = Monthly_Oil_Price$Date, Price = Monthly_Oil_Price$Settle)
 Plot_Oil <- subset(Plot_Oil,Plot_Oil$Date>=min(Bigmac_Oil$Date))
 write.csv(Plot_Oil,"Initial_Plot_Oil.csv",row.names = FALSE)
 

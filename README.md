@@ -30,6 +30,15 @@ I made a rough plot using base graphic in R. The objective is to communicate the
 However, I also would like to compare the price of gold to the price of oil. We know that gold is considered as standard currency. so I want to see that historically, how many bbl per oz of gold we can buy. It is shown in chart below.
 ![BBL of Oil per Oz of Gold](https://raw.githubusercontent.com/PhilipThomas99/Data-Visualization-Udacity/master/images/BBLPerGold.png)
 
+I have tried several types other than scatter and line chart. To visualize the data. 
+
+- Bar chart --> there are too many points on the data, which makes the chart very busy and it's less appealing to visualize the continuity between time series
+- Only Scatter Chart --> The continuity between time series is not easily seen, so we need lines to connect these data points.
+- Only Line Chart --> Visualize the continuity of the time series well, but the reader won't see the number of data points that I use to generate the time series
+- Scatter Chart and Line Chart --> Starting to look nice, but the chart feels empty
+- Line Area Chart and Scatter Chart --> It looks like the chart from Yahoo Finance and looks professional. **So I will use this format**.
+
+The reason why I use line and scatter chart is this.
 #### Initial Version of Visualization (dimple.js)
 
 The Initial Version of the charts is as follow:. 
