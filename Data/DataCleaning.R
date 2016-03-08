@@ -1,4 +1,4 @@
-setwd("C:/Users/Phili/Downloads/Udacity - Data Visualization Project/Data")
+setwd("C:/Users/Phili/Documents/GitHub/Data-Visualization-Udacity/Data")
 library(zoo)
 library(plyr)
 
@@ -12,8 +12,6 @@ Monthly_Oil_Price$Date <- as.Date(Monthly_Oil_Price$Date)
 
 #generate data for initial plotting
 Plot_Oil <- data.frame(Date = Monthly_Oil_Price$Date, Price = Monthly_Oil_Price$Settle)
-#export csv for initial plot
-write.csv(Plot_Oil,"Initial_Plot_Oil.csv",row.names = FALSE)
 
 
 #Load Consumer Prices Index (CPI)
@@ -56,13 +54,18 @@ names(Plot_Gold_Oil_Data)[3] <- "OilPrice"
 
 Plot_Gold_Oil_Data$OzGold_PerBBL <- Plot_Gold_Oil_Data$GoldPrice/Plot_Gold_Oil_Data$OilPrice
 Gold_Oil <- data.frame(Date=Plot_Gold_Oil_Data$Date, BBLperOzGold = Plot_Gold_Oil_Data$OzGold_PerBBL)
+Gold_Oil <- subset(Gold_Oil, Gold_Oil$Date >= min(Bigmac_perBBL$Date))
 
 write.csv(Bigmac_Oil, "Bigmac_Oil_Data.csv", row.names=FALSE)
-
 write.csv(Gold_Oil, "Gold_Oil_Data.csv", row.names=FALSE)
 
 ############################ Plot Sketching ###################################
 
+
+Plot_Oil <- subset(Plot_Oil,Plot_Oil$Date>=min(Bigmac_Oil$Date))
+write.csv(Plot_Oil,"Initial_Plot_Oil.csv",row.names = FALSE)
+
+#export csv for initial plot
 #Plot Sketching for BigMac
 plot(Bigmac_Oil$Date, Bigmac_Oil$BigmacPerBBL)
 lines(Bigmac_Oil$Date, Bigmac_Oil$BigmacPerBBL)
